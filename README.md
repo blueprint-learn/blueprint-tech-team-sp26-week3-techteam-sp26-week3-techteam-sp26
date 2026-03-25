@@ -21,7 +21,7 @@ Your work is checked by **automated tests** (`pytest`) that connect to your loca
 
 Use the link from **GitHub Classroom** (your personal copy of this starter repo).
 
-### 2) Create a virtual environment (recommended)
+### 2) Create a virtual environment
 
 **macOS / Linux**
 
@@ -132,24 +132,14 @@ Ensure Docker is up and `.env` exists, then:
 pytest -q
 ```
 
-What the tests do (high level):
+What the tests do:
 
 - Connect using your `.env` settings
-- **Reset** relevant tables between checks (deterministic runs)
+- **Reset** relevant tables between checks
 - Execute `schema/01_create_tables.sql` then `schema/02_seed_data.sql`
 - Verify **foreign keys**, **NOT NULL**, seed **row values**, and each **query output**
 
 If something fails, read the assertion message: it usually names the SQL file to fix and what mismatched.
-
-## Submission expectations
-
-Follow your instructor’s GitHub Classroom deadline and submission steps. Typically you will:
-
-1. Commit your completed `.sql` files (only in `schema/` and `student_queries/`).
-2. Push to your assignment branch / `main` on your personal repo.
-3. Confirm **Green checks** if Classroom autograding is enabled (or attach test output if asked).
-
-**Do not commit secrets.** `.env` is gitignored; use `.env.example` as the template only.
 
 ## Troubleshooting
 
@@ -160,14 +150,3 @@ Follow your instructor’s GitHub Classroom deadline and submission steps. Typic
 | Auth errors                                | Ensure `.env` matches the username/password/db in `docker-compose.yml`  |
 | Port conflict on 5432                      | Change the **host** port mapping and `POSTGRES_PORT` in `.env` together |
 | Tests say SQL file is empty                | Replace `# TODO` placeholders with real statements                      |
-
-
-## For instructors (GitHub Classroom notes)
-
-- Starter files intentionally contain **TODOs only** — no solutions in `schema/` or `student_queries/`.
-- This repo is designed to work with a simple **pytest** autograder that provision Docker (or uses a service container) before `pytest -q`.
-- Lecture alignment: durable storage vs in-memory dicts; relational vs non-relational; PostgreSQL as an RDBMS; `CREATE TABLE` / `INSERT` / `SELECT` / `JOIN` / one-to-many relationships.
-
----
-
-**Questions?** Ask in your tech team workshop channel or during office hours.
