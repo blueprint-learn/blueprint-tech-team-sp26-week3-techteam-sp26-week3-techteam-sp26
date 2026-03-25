@@ -14,7 +14,6 @@ Your work is checked by **automated tests** (`pytest`) that connect to your loca
 
 - **Docker Desktop** (or another Docker engine) installed and running
 - **Python 3.10+**
-- Basic programming comfort (variables, functions). No prior SQL required.
 
 ## Setup
 
